@@ -19,6 +19,7 @@ set $term kitty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $menu wofi --show drun
+set $screenshot grim -g "$(slurp)" /home/mayenkiy/test/images/$(date +%Y%m%d_%H%M%S).png
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -55,16 +56,18 @@ titlebar_border_thickness 0
 #
 # Example configuration:
 #
-   input "2:14:ETPS/2_Elantech_Touchpad" {
-       dwt enabled
-       tap enabled
-       natural_scroll enabled
-       middle_emulation enabled
-   }
+input "2:14:ETPS/2_Elantech_Touchpad" {
+    dwt enabled
+    tap enabled
+    natural_scroll enabled
+    middle_emulation enabled
+    pointer_accel 0.4
+}
+
 input type:keyboard {
     xkb_layout us,ru
     xkb_options grp:alt_shift_toggle
-   }
+}
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
@@ -94,6 +97,7 @@ input type:keyboard {
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+shift+r exec $screenshot
 #
 # Moving around:
 #
