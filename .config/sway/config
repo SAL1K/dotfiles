@@ -25,6 +25,8 @@ set $screenshot grim -g "$(slurp)" /home/mayenkiy/test/images/$(date +%Y%m%d_%H%
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /usr/share/backgrounds/sway/Lofi-Cafe1.png fill
 exec waybar
+exec mako
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 gaps inner 9
 default_border pixel 2
 default_floating_border pixel 2
