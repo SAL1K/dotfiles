@@ -19,7 +19,7 @@ set $term kitty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $menu wofi --show drun
-set $screenshot grim -g "$(slurp)" /home/mayenkiy/test/images/$(date +%Y%m%d_%H%M%S).png
+set $screenshot grim -g "$(slurp)" /home/mayenkiy/$(date +%Y%m%d_%H%M%S).png
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
